@@ -41,7 +41,7 @@ class Comments(models.Model):
     author_email = models.EmailField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
     text_comment = models.TextField()
-    car = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
+    car = models.ForeignKey(Car, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.author_email} {self.created_at} {self.text_comment} {self.car}'
